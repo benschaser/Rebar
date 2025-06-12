@@ -39,5 +39,15 @@ namespace Rebar.Models
                 OnPropertyChanged();
             }
         }
+        private int size = 0;
+        public int Size
+        {
+            get => size;
+            set
+            {
+                size = value;
+                OnPropertyChanged();
+            }
+        }
     }
 }
