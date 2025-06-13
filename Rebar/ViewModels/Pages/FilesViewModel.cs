@@ -1,5 +1,6 @@
 ﻿using Rebar.Models;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Windows.Media;
 using Wpf.Ui.Abstractions.Controls;
 
@@ -10,7 +11,10 @@ namespace Rebar.ViewModels.Pages
         private bool _isInitialized = false;
 
         [ObservableProperty]
-        private ObservableCollection<ItemReference> directory = new();
+        private ObservableCollection<DriveInfo> drives = new();
+
+        [ObservableProperty]
+        private string fullDirectoryPath = string.Empty;
 
         [RelayCommand]
         private void Update()
@@ -30,6 +34,12 @@ namespace Rebar.ViewModels.Pages
 
         private void InitializeViewModel()
         {
+            var visibleDrives = DriveInfo.GetDrives().Where(d => d.IsReady).ToList();
+            Drives.Clear();
+            foreach (var drive in visibleDrives)
+            {
+                Drives.Add(drive);
+            }
             _isInitialized = true;
         }
     }

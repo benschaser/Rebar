@@ -15,36 +15,69 @@
     ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
     Foreground="{DynamicResource TextFillColorPrimaryBrush}"
     mc:Ignorable="d">
-    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
-        <Grid VerticalAlignment="Stretch">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*" MinWidth="120" />
-                <ColumnDefinition Width="3" />
-                <ColumnDefinition Width="1*" />
-            </Grid.ColumnDefinitions>
+    <Border BorderBrush="{DynamicResource ControlElevationBorderBrush}" BorderThickness="0,1,0,0">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+            <Grid VerticalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="1*"
+                        MinWidth="120"
+                        MaxWidth="360" />
+                    <ColumnDefinition Width="3" />
+                    <ColumnDefinition Width="4*" />
+                </Grid.ColumnDefinitions>
 
-            <Border Grid.Column="0" VerticalAlignment="Stretch">
-                <TextBlock>Panel 1</TextBlock>
-                <!--<ItemsControl
-                ItemsSource="{Binding Directory}"
-                ItemTemplate="{StaticResource FileItemTemplate}">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel />
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-            </ItemsControl>-->
-            </Border>
-            <GridSplitter
-                Grid.Column="1"
-                Width="3"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Background="{DynamicResource TextFillColorPrimaryBrush}"
-                Opacity="0.2" />
-            <Border Grid.Column="2" VerticalAlignment="Stretch">
-                <TextBlock>Panel 2</TextBlock>
-            </Border>
-        </Grid>
-    </ScrollViewer>
+                <Border Grid.Column="0" VerticalAlignment="Stretch">
+                    <ListBox
+                        HorizontalContentAlignment="Stretch"
+                        VerticalContentAlignment="Stretch"
+                        Background="{DynamicResource ApplicationBackgroundBrush}"
+                        Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                        ItemsSource="{Binding ViewModel.Drives}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid
+                                    Margin="0,0,0,2"
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <ui:SymbolIcon
+                                        Grid.Column="0"
+                                        VerticalAlignment="Center"
+                                        Symbol="HardDrive16" />
+                                    <TextBlock
+                                        Grid.Column="1"
+                                        Margin="0"
+                                        Padding="0,0,0,4"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Center">
+                                        <TextBlock.Text>
+                                            <MultiBinding StringFormat="{}{0} ({1})">
+                                                <Binding Path="VolumeLabel" />
+                                                <Binding Path="Name" />
+                                            </MultiBinding>
+                                        </TextBlock.Text>
+                                    </TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Border>
+                <GridSplitter
+                    Grid.Column="1"
+                    Width="3"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Background="{DynamicResource TextFillColorPrimaryBrush}"
+                    Opacity="0.2" />
+                <Border Grid.Column="2" VerticalAlignment="Stretch">
+                    <TextBlock>Panel 2</TextBlock>
+                </Border>
+            </Grid>
+        </ScrollViewer>
+    </Border>
 </Page>

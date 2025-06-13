@@ -6,7 +6,7 @@ namespace Rebar.ViewModels.Windows
     public partial class MainWindowViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string _applicationTitle = "WPF UI - Rebar";
+        private string _applicationTitle = "Rebar - Project File Management";
 
         [ObservableProperty]
         private ObservableCollection<object> _menuItems = new()
