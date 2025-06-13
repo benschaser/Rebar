@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rebar.Models
 {
-    internal class ItemReference : Item
+    public class ItemReference : Item
     {
         public ItemReference() { }
         private Guid guid;

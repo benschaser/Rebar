@@ -9,7 +9,7 @@ using System.Windows.Threading;
 
 namespace Rebar.Models
 {
-    internal class ClassBase : INotifyPropertyChanged
+    public class ClassBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)

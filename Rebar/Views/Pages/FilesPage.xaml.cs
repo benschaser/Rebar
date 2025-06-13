@@ -3,11 +3,11 @@ using Wpf.Ui.Abstractions.Controls;
 
 namespace Rebar.Views.Pages
 {
-    public partial class DataPage : INavigableView<GroupsViewModel>
+    public partial class FilesPage : INavigableView<FilesViewModel>
     {
-        public GroupsViewModel ViewModel { get; }
+        public FilesViewModel ViewModel { get; }
 
-        public DataPage(GroupsViewModel viewModel)
+        public FilesPage(FilesViewModel viewModel)
         {
             ViewModel = viewModel;
             DataContext = this;

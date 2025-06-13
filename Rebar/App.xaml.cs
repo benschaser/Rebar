@@ -49,7 +49,9 @@ namespace Rebar
                 services.AddSingleton<DashboardPage>();
                 services.AddSingleton<DashboardViewModel>();
                 services.AddSingleton<DataPage>();
-                services.AddSingleton<DataViewModel>();
+                services.AddSingleton<GroupsViewModel>();
+                services.AddSingleton<FilesPage>();
+                services.AddSingleton<FilesViewModel>();
                 services.AddSingleton<SettingsPage>();
                 services.AddSingleton<SettingsViewModel>();
             }).Build();

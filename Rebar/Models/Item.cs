@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rebar.Models
 {
-    internal class Item : ClassBase
+    public class Item : ClassBase
     {
         public Item() { }
         public string name = "New Item";

@@ -29,7 +29,7 @@
         <ui:NavigationView
             x:Name="RootNavigation"
             Grid.Row="1"
-            Padding="42,0,42,0"
+            Padding="0"
             BreadcrumbBar="{Binding ElementName=BreadcrumbBar}"
             FooterMenuItemsSource="{Binding ViewModel.FooterMenuItems, Mode=OneWay}"
             FrameMargin="0"
@@ -38,7 +38,7 @@
             MenuItemsSource="{Binding ViewModel.MenuItems, Mode=OneWay}"
             PaneDisplayMode="LeftFluent">
             <ui:NavigationView.Header>
-                <ui:BreadcrumbBar x:Name="BreadcrumbBar" Margin="42,32,42,20" />
+                <ui:BreadcrumbBar x:Name="BreadcrumbBar" Margin="20,16,42,20" />
             </ui:NavigationView.Header>
             <ui:NavigationView.ContentOverlay>
                 <Grid>
@@ -56,7 +56,7 @@
             x:Name="TitleBar"
             Title="{Binding ViewModel.ApplicationTitle}"
             Grid.Row="0"
-            CloseWindowByDoubleClickOnIcon="True">
+            CloseWindowByDoubleClickOnIcon="False">
             <ui:TitleBar.Icon>
                 <ui:ImageIcon Source="pack://application:,,,/Assets/wpfui-icon-256.png" />
             </ui:TitleBar.Icon>

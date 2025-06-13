@@ -19,9 +19,15 @@ namespace Rebar.ViewModels.Windows
             },
             new NavigationViewItem()
             {
-                Content = "Files",
-                Icon = new SymbolIcon { Symbol = SymbolRegular.DataHistogram24 },
+                Content = "Groups",
+                Icon = new SymbolIcon { Symbol = SymbolRegular.Group24 },
                 TargetPageType = typeof(Views.Pages.DataPage)
+            },
+            new NavigationViewItem()
+            {
+                Content = "Files",
+                Icon = new SymbolIcon { Symbol = SymbolRegular.FolderOpen24 },
+                TargetPageType = typeof(Views.Pages.FilesPage)
             }
         };
 
